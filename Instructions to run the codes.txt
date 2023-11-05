@@ -1,0 +1,52 @@
+To run .ipynb files:
+________________________
+1- create a new enviornment and install the packages in the textfile packages using the command line. Check the versions needed (especially for numpy, and tensorflowprobability, and gym). The rest of the packages should follow the instructions in lab#2. 
+
+conda create --name dana-hw1 
+conda activate dana-hw1
+conda install package-name=desired-version
+
+
+
+2- The packages used in this homework include:
+import numpy as np
+from collections import namedtuple, deque
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import torch.nn.functional as F
+import gym
+import math
+import random
+import matplotlib
+import matplotlib.pyplot as plt
+import os
+
+
+3- Next, while the environment is activated, run the following command line to create a kernel:
+python -m ipykernel install --user --name iems469 --display-name "iems469" 
+
+(in this case iems469 is the kernel name, but one can customize it)
+
+4- In new launcher, create a new notebook from the new kernel that was created. 
+Next , click on kernel in the tool bar and choose restart kernel. Every time a new package is installed, 
+one needs to run the command line in step 3, and restart the kernel again, to update the kernel. 
+
+5- Next upload the code, and run it using jupyter hub on deepdish. 
+
+Alternatively, use google colab to convert the .ipynb files to .py files. ( by downloading as .py)
+
+To run .py files:
+__________________
+
+
+type the following commands for a code in a file named "name.py", in a powershell in windows:
+1- ssh netid@mlds-deepdish3.ads.northwestern.edu
+2- enter password 
+3- conda activate environment-name
+4- cd directory 
+5- python name.py
+
+
+
+
