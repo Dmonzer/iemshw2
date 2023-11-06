@@ -1,10 +1,11 @@
 To run .ipynb files:
 ________________________
-1- create a new enviornment and install the packages in the textfile packages using the command line. Check the versions needed (especially for numpy,  and gym). The rest of the packages should follow the instructions in lab#2. 
+1- create a new enviornment and install the packages in the textfile packages using the command line. Check the versions needed (especially for numpy,  and gym). The rest of the packages should follow the instructions in lab#2. Also check the file Packages that include all the modules and their versions that were installed in the environment used to run my codes. 
 
-conda create --name dana-hw1 
-conda activate dana-hw1
-conda install package-name=desired-version
+conda create --name dana-hw2 
+conda activate dana-hw2
+example on installing a module of a specific version:
+conda install module-name=desired-version
 
 
 
@@ -30,7 +31,7 @@ python -m ipykernel install --user --name iems469 --display-name "iems469" 
 
 4- In new launcher, create a new notebook from the new kernel that was created. 
 Next , click on kernel in the tool bar and choose restart kernel. Every time a new package is installed, 
-one needs to run the command line in step 3, and restart the kernel again, to update the kernel. 
+one needs to run the command line in step 3, and restart the kernel again, to update the kernel. Unless the installations took place consecutively, then run step 3 only once after all the installations and restart the kernel. 
 
 5- Next upload the code, and run it using jupyter hub on deepdish. 
 6- Note that to be able to run the code on GPU, install the following, by running this command:
@@ -43,19 +44,23 @@ To run .py files:
 __________________
 
 
-type the following commands for a code in a file named "name.py", in a powershell in windows:
+type the following commands for a code in a file named "name.py", in the powershell in windows:
 1- ssh netid@mlds-deepdish3.ads.northwestern.edu
 2- enter password 
 3- conda activate environment-name
 4- cd directory 
 5- python name.py
+now the code will run and the output of the code will be displayed in the same terminal. 
+The saved files of the code will be saved in the directory. 
 
-If for some reason, gym says there is no environment "MsPacman-v0", try some of the commands below:
+
+If for some reason, gym says there is no environment "MsPacman-v0", try some/all of the commands below:
 __________________________________________________________________________________________________
 pip install gym[accept-rom-license]
 pip install gym[atari,accept-rom-license]==0.26.2
 pip install --upgrade charset_normalizer
 
+Note that you can update the number of episodes as needed for the code. In most codes it is set to 10,000. But the code can be interrupted. alternatively you can select much smaller number of episodes (num_episodes). 
 
 
 

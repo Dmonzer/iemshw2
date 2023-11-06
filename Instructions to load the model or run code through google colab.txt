@@ -16,8 +16,9 @@ pip install gym[atari,accept-rom-license]==0.26.2)
 _____________________________________________________________________________________
 
 
-3- In both cases make sure you upload the model files in the same directory as the code, or in the same folder as the code, to be able to load the model. 
+3- In both cases make sure you upload the model files (.pth files) in the same directory as the code, or in the same folder as the code, to be able to load the model. 
 _____________________________________________________________________________________
 - Make sure you add the file of the model of the policy in the same directory that is accessible by the code. 
 - Change the model name accordingly, depending on which model you want to load. 
+- These files are needed mostly for the plotting codes and in case you're running the codes that allow you to train starting from an existing model (due to interruption for example). 
 
