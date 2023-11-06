@@ -1,16 +1,14 @@
 instructions to run the code;
 
-1- If using jupyter notebook, run the following installations first.
-____________________________________________ 
+1- If using jupyter notebook without being able to create a new kernel, run the following installations first.
+_____________________________________________________________________________________________________________
 !pip install tensorflow-gpu==2.10.0
 !pip install gym==0.26.0
-!pip install tensorflow-probability==0.12.0
 !pip install gym[atari,accept-rom-license]==0.26.2
+along with other modules as needed. 
 
-(note that if tensorflow-probability still gives an error install the following versions:
-#Successfully installed numpy-1.26.1 tensorflow-probability-0.22.1)
 
-(note that if gym environment says there is not environment for Pong-v0, either install version 0.26.2, 
+(note that if gym environment says there is not environment for MsPacman-v0, either install version 0.26.2, 
 or keep version 0.26.0, but make sure you install this:
 pip install gym[atari,accept-rom-license]==0.26.2)
 
@@ -18,9 +16,8 @@ pip install gym[atari,accept-rom-license]==0.26.2)
 _____________________________________________________________________________________
 
 
-3- In both cases make sure you upload the model folder (exactly as it is in the folder organization
-to be able to load the model correctly in any code that requires loading the model.)
+3- In both cases make sure you upload the model files in the same directory as the code, or in the same folder as the code, to be able to load the model. 
 _____________________________________________________________________________________
-- Make sure you add the folder of the model of the policy in the same directory that is accessible by the code. 
+- Make sure you add the file of the model of the policy in the same directory that is accessible by the code. 
 - Change the model name accordingly, depending on which model you want to load. 
 

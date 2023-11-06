@@ -252,37 +252,42 @@ for episode in range(num_episodes):
         ##save models
         torch.save(policy_net , 'policy_net_MsPacman_'+str(episode)+'_.pth')
         torch.save(policy_net.state_dict(), 'policy_net_MsPacman_state_dict_'+str(episode)+'_.pth')
-        torch.save(target_net , 'target_net_MsPacman_run1.pth')
+        torch.save(target_net , 'target_net_MsPacman_'+str(episode)+'_.pth')
         torch.save(target_net.state_dict(), 'target_net_MsPacman_state_dict_'+str(episode)+'_.pth')
         ##rewards plot
         episode_numbers = list(range(1, len(episode_rewards ) + 1))
         moving_avg = np.convolve(episode_rewards, np.ones(100) / 100, mode='valid')
+        plt.figure()
         plt.plot(episode_numbers, episode_rewards, label="Episode Reward")
         plt.plot(episode_numbers[-len(moving_avg):], moving_avg, label="Moving Average (100 episodes)")
         plt.xlabel("Episode")
         plt.ylabel("Reward")
-        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-        plt.show()
+        plt.legend(loc='upper left')
+        #plt.show()
         plt.savefig('episode_rewards_MsPacman_'+str(episode)+'_.png')
+        plt.close()
         ##Q max plot
+        plt.figure()
         plt.plot(episode_numbers, Qmax_episodes, label="Episode Qmax")
         plt.xlabel("Episode")
         plt.ylabel("Average Qmax of Episode")
-        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-        plt.show()
+        plt.legend(loc='upper left')
+        #plt.show()
         plt.savefig('Qmax_MsPacman_'+str(episode)+'_.png')
-
+        plt.close()
 
 
 episode_numbers = list(range(1, len(episode_rewards ) + 1))
 moving_avg = np.convolve(episode_rewards, np.ones(100) / 100, mode='valid')
+plt.figure()
 plt.plot(episode_numbers, episode_rewards, label="Episode Reward")
 plt.plot(episode_numbers[-len(moving_avg):], moving_avg, label="Moving Average (100 episodes)")
 plt.xlabel("Episode")
 plt.ylabel("Reward")
-plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-plt.show()
+plt.legend(loc='upper left')
+#plt.show()
 plt.savefig('episode_rewards_pytorch_run4.png')
+plt.close()
 
 
 
@@ -322,14 +327,15 @@ mean = np.mean(numpy_array)
 std_dev = np.std(numpy_array)
 
 legend_label = f'Data (Mean: {mean:.2f}, Std Dev: {std_dev:.2f})'
-
+plt.figure()
 plt.hist(Sample_Episodes, bins=10)
 plt.xlabel('Episode Reward Values')
 plt.ylabel('Frequency')
 plt.legend([legend_label])
 plt.title('Histogram of Episode Rewards')
-plt.show()
+#plt.show()
 plt.savefig('Histogramof500episodes_MsPacman.png')
+plt.close()
 
 
 

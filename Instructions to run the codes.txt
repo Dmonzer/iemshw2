@@ -1,6 +1,6 @@
 To run .ipynb files:
 ________________________
-1- create a new enviornment and install the packages in the textfile packages using the command line. Check the versions needed (especially for numpy, and tensorflowprobability, and gym). The rest of the packages should follow the instructions in lab#2. 
+1- create a new enviornment and install the packages in the textfile packages using the command line. Check the versions needed (especially for numpy,  and gym). The rest of the packages should follow the instructions in lab#2. 
 
 conda create --name dana-hw1 
 conda activate dana-hw1
@@ -33,6 +33,9 @@ Next , click on kernel in the tool bar and choose restart kernel. Every time a n
 one needs to run the command line in step 3, and restart the kernel again, to update the kernel. 
 
 5- Next upload the code, and run it using jupyter hub on deepdish. 
+6- Note that to be able to run the code on GPU, install the following, by running this command:
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
 
 Alternatively, use google colab to convert the .ipynb files to .py files. ( by downloading as .py)
 
@@ -46,6 +49,12 @@ type the following commands for a code in a file named "name.py", in a powershel
 3- conda activate environment-name
 4- cd directory 
 5- python name.py
+
+If for some reason, gym says there is no environment "MsPacman-v0", try some of the commands below:
+__________________________________________________________________________________________________
+pip install gym[accept-rom-license]
+pip install gym[atari,accept-rom-license]==0.26.2
+pip install --upgrade charset_normalizer
 
 
 
